@@ -29,24 +29,26 @@ public class BanqueApp {
 		// envisager une instance de date avec class util
 		Calendar cal = Calendar.getInstance();
 		Calendar cal2 = Calendar.getInstance();
-		cal.set(2024, 2, 23);
 		// fin
 
 		// instanciation d'un banque
 		Banque bq1 = new Banque("Ing");
-
 		em.persist(bq1);
 
 		// instanciation d'un client
+		cal.set(2024, 2, 23);
 		Client cl1 = new Client("Dubal", "Jean", cal.getTime(), bq1,
 				new Adresse(5, "Rue de la paix", 34000, "Montpellier"));
-
+		
+		// liaison d'un client à une banque
+		bq1.addClient(cl1);
+		
+		
+		// instanciation d'un client
 		cal.set(1992, 2, 23);
 		Client cl2 = new Client("Hier", "David", cal.getTime(), bq1,
 				new Adresse(25, "Rue de la loge", 34000, "Montpellier"));
-
-		// liaison d'un client à une banque
-		bq1.addClient(cl1);
+	
 		// liaison d'un client à une banque
 		bq1.addClient(cl2);
 
@@ -60,9 +62,9 @@ public class BanqueApp {
 		Compte cpt2 = new Compte("FR87-1111-1111-000", 8000.25);
 		em.persist(cpt2);
 
+		// liaison d'un client à un compte
 		cpt2.getClients().add(cl1);
 		cpt2.getClients().add(cl2);
-		// liaison d'un client à un compte
 		cpt1.getClients().add(cl1);
 
 		// un client avec plusieurs compte
@@ -71,17 +73,17 @@ public class BanqueApp {
 				new Adresse(25, "Rue de la digi", 34000, "Montpellier"));
 
 		bq1.addClient(cl3);
-
 		em.persist(cl3);
 
+		
 		LivretA livA = new LivretA();
 		livA.setTaux(0.35);
 		livA.setNumero("Be00-0000-0000");
 		livA.setSolde(250.25);
 		livA.getClients().add(cl3);
-
 		em.persist(livA);
 
+		
 		cal.set(2030, 6, 25);
 		AssuranceVie assV = new AssuranceVie();
 		assV.setDateFin(cal.getTime());
