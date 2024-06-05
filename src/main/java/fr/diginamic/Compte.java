@@ -33,7 +33,7 @@ public class Compte {
 	@JoinTable(name = "CLI_COMPTE", joinColumns = @JoinColumn(name = "ID_COMPTE", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ID_CLIENT", referencedColumnName = "ID"))
 	private Set<Client> clients = new HashSet<>();
 
-	@OneToMany(mappedBy = "compte")
+	@OneToMany(mappedBy = "compte") //attribut compte qui possede la notation inverse
 	private Set<Operation> operations = new HashSet<>();
 
 	/**

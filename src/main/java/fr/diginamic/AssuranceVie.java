@@ -30,6 +30,17 @@ public class AssuranceVie extends Compte{
 	public AssuranceVie() {
 
 	}
+	
+//	/** Constructor
+//	 * @param date
+//	 * @param montant
+//	 * @param motif
+//	 */
+//	public Virement(Date date, Double montant, Date dateFin, Double taux) {
+//		super(date, montant);
+//		this.dateFin = dateFin;
+//		this.taux = taux;
+//	}
 
 	/** Getter for taux
 	 * @return the taux

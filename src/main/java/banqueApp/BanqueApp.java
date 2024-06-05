@@ -61,9 +61,11 @@ public class BanqueApp {
 
 		Compte cpt2 = new Compte("FR87-1111-1111-000", 8000.25);
 		em.persist(cpt2);
+		
 
 		// liaison d'un client à un compte
-		cpt2.getClients().add(cl1);
+		cl1.getComptes().add(cpt2);
+		// grace au joinTable des deux cotés, on peut rajouter dans les deux sens
 		cpt2.getClients().add(cl2);
 		cpt1.getClients().add(cl1);
 

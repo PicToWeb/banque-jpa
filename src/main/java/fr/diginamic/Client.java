@@ -24,10 +24,10 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "nom")
+	@Column(name = "nom",length=50)
 	private String nom;
 
-	@Column(name = "prenom")
+	@Column(name = "prenom",length=50)
 	private String prenom;
 
 	@Column(name = "date_naissance")
@@ -123,6 +123,20 @@ public class Client {
 	 */
 	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
+	}
+
+	/** Getter for comptes
+	 * @return the comptes
+	 */
+	public Set<Compte> getComptes() {
+		return comptes;
+	}
+
+	/** Setter for comptes
+	 * @param comptes the comptes to set
+	 */
+	public void setComptes(Set<Compte> comptes) {
+		this.comptes = comptes;
 	}
 
 }

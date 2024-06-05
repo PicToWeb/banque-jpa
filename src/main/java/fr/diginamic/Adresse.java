@@ -8,7 +8,7 @@ public class Adresse {
 	private int numero;
 	private String rue;
 	private int codePostal;
-	private String Ville;
+	private String ville;
 
 	/**
 	 * Constructor
@@ -30,7 +30,7 @@ public class Adresse {
 		this.numero = numero;
 		this.rue = rue;
 		this.codePostal = codePostal;
-		Ville = ville;
+		this.ville = ville;
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class Adresse {
 	 * @return the ville
 	 */
 	public String getVille() {
-		return Ville;
+		return ville;
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class Adresse {
 	 * @param ville the ville to set
 	 */
 	public void setVille(String ville) {
-		Ville = ville;
+		this.ville = ville;
 	}
 
 }
